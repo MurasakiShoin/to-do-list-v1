@@ -48,3 +48,26 @@ tasks.addEventListener('click', (e) => {
     }
 })
 
+// edit task
+tasks.addEventListener('click', (e) => {
+    if (e.target.classList.contains('fa-pen-to-square')) {
+        let item = e.target.parentElement.parentElement;
+        let task = item.querySelector('p');
+        task.setAttribute('contenteditable', true);
+        task.focus();
+
+        task.addEventListener('blur', () => {
+            task.setAttribute('contenteditable', false);
+            item.classList.remove('editable');
+        });
+
+        task.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                task.setAttribute('contenteditable', false);
+                item.classList.remove('editable');
+            }
+        });
+
+        item.classList.add('editable');
+    }
+});
