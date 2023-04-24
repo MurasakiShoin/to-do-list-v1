@@ -7,6 +7,7 @@
     font-family: 'Montserrat', sans-serif;
     font-family: 'Ubuntu', sans-serif;
 }
+
 body{
     background-color:aliceblue;
     display: flex;
@@ -15,16 +16,16 @@ body{
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-
 }
+
 .title {
     font-size: 30px;
     font-weight: 600;
     color:rgb(63, 112, 197);
     letter-spacing: 1px;
     margin: 30px 0;
-
 }
+
 .todo-list{
     width: 450px;
     padding: 20px;
@@ -32,11 +33,13 @@ body{
     border-radius: 10px;
     background-color:aliceblue;
 }   
+
 .list-head{
     display: grid;
     grid-template-columns: 4fr 0.8fr;
     gap: 20px;
 }
+
 .entered-list{
     padding: 10px;
     border-radius: 5px;
@@ -44,6 +47,7 @@ body{
     font-size: 16px;
     outline: none;
 }
+
 .add-list{
     border: none;
     border-radius: 5px;
@@ -55,6 +59,11 @@ body{
     opacity: .6;
     pointer-events: none;
 }
+
+.add-list:hover {
+    background-color: rgb(16, 146, 203);
+}
+
 .add-list.active{
     opacity: 1;
     pointer-events: all;
@@ -64,6 +73,7 @@ body{
     width: 100%;
     margin-top: 30px;
 }
+
 .item{
     padding: 10px;
     border-radius: 5px;
@@ -73,21 +83,25 @@ body{
     justify-content: space-between;
     align-items: center; 
 }
+
 .item p{
     font-size: 16px;
     font-weight: 500;
     color: rgb(0, 0, 0);
     letter-spacing: 1px;
 }
+
 .item.completed p{
     text-decoration: line-through;
     color: black;
 }
+
 .item-btn{
     display: flex;
     align-items: center;
     gap: 10px;
 }
+
 .item-btn i {
     color:rgb(63, 112, 197);
     font-size: 18px;

@@ -12,26 +12,34 @@ input.addEventListener('input', () => {
     }
 });
 
-// add new item to list
-
-addBtn.addEventListener('click', () => {
+// add new item to list when "Add" button is clicked or "Enter" key is pressed
+function addItemToList() {
     if (input.value.trim() !== '') {
-        let newItem = document.createElement('div');
-        newItem.classList.add('item');
-        newItem.innerHTML = `
+      let newItem = document.createElement('div');
+      newItem.classList.add('item');
+      newItem.innerHTML = `
         <p> ${input.value} </p>
         <div class="item-btn">
             <i class="fa-regular fa-pen-to-square"></i>
             <i class="fa-solid fa-check"></i>
             <i class="fa-solid fa-eraser"></i>
         </div>          
-        `;
-        tasks.appendChild(newItem);
-        input.value = '';
+      `;
+      tasks.appendChild(newItem);
+      input.value = '';
     } else {
-        alert('Please enter a task');
+      alert('Please enter a task');
+    }
+  }
+  
+  addBtn.addEventListener('click', addItemToList);
+  
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      addItemToList();
     }
 });
+  
 
 //delete item from list
 
